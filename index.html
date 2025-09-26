@@ -1,402 +1,245 @@
 <!DOCTYPE html>
-<html lang="ne">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>फर्गुसन, मिसौरीबाट नेतृत्वका पाठहरू</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    animation: {
-                        'slide-in': 'slideIn 0.5s ease-out',
-                        'float': 'float 3s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        slideIn: {
-                            '0%': { opacity: '0', transform: 'translateY(30px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' }
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-10px)' }
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+    <title>Happy Birthday Rosu! 🎉</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
     <style>
-        body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
         }
-        .glass-effect {
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.95);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+        
+        @keyframes bounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
         }
-        .gradient-text {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .float { animation: float 3s ease-in-out infinite; }
+        .bounce { animation: bounce 2s ease-in-out infinite; }
+        .sparkle { animation: sparkle 2s ease-in-out infinite; }
+        .fade-in-up { animation: fadeInUp 1s ease-out; }
+        .gradient-bg { 
+            background: linear-gradient(-45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7);
+            background-size: 400% 400%;
+            animation: gradientShift 5s ease infinite;
+        }
+        
+        .balloon {
+            width: 60px;
+            height: 80px;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+        }
+        
+        .candle-flame {
+            width: 8px;
+            height: 12px;
+            background: radial-gradient(circle, #ffeb3b 0%, #ff9800 70%);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            animation: flicker 0.5s ease-in-out infinite alternate;
+        }
+        
+        @keyframes flicker {
+            0% { transform: rotate(-2deg) scale(1); }
+            100% { transform: rotate(2deg) scale(1.1); }
+        }
+        
+        .heart {
+            animation: bounce 1.5s ease-in-out infinite;
         }
     </style>
 </head>
-<body class="overflow-hidden">
-    <div class="relative w-screen h-screen flex items-center justify-center">
-        <!-- Slide Counter -->
-        <div class="fixed top-4 right-4 md:top-8 md:right-8 glass-effect px-4 py-2 md:px-6 md:py-3 rounded-full font-semibold text-gray-800 shadow-lg z-50">
-            <span id="current-slide">1</span> / <span id="total-slides">10</span>
-        </div>
-
-        <!-- Slide 1: Title -->
-        <div class="slide active glass-effect rounded-3xl shadow-2xl p-8 md:p-16 max-w-4xl w-11/12 min-h-[600px] hidden animate-slide-in">
-            <div class="text-center flex flex-col justify-center items-center h-full">
-                <div class="text-6xl md:text-8xl mb-6 md:mb-8 animate-float">🏛️</div>
-                <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold text-center mb-6 md:mb-8 leading-tight gradient-text">
-                    फर्गुसन, मिसौरीबाट नेतृत्वका पाठहरू
-                </h1>
-                <p class="text-lg md:text-xl lg:text-2xl text-gray-600 font-light mt-4 md:mt-8">
-                    एक परियोजना प्रस्तुति
-                </p>
-            </div>
-        </div>
-
-        <!-- Slide 2: Event Introduction -->
-        <div class="slide glass-effect rounded-3xl shadow-2xl p-8 md:p-16 max-w-4xl w-11/12 min-h-[600px] hidden animate-slide-in">
-            <h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold text-center mb-8 md:mb-12 text-gray-800">घटनाको परिचय</h2>
-            <div class="flex flex-col lg:flex-row items-center gap-6 md:gap-8">
-                <div class="w-full lg:flex-1 order-2 lg:order-1">
-                    <ul class="space-y-4 md:space-y-6">
-                        <li class="bg-gradient-to-r from-gray-50 to-gray-100 p-4 md:p-6 rounded-xl border-l-4 border-blue-500 shadow-sm hover:translate-x-2 transition-transform duration-200">
-                            <span class="text-blue-500 font-bold mr-2">●</span>
-                            <span class="text-base md:text-lg text-gray-800 leading-relaxed">२०१४ मा १८ वर्षीय माइकल ब्राउनको प्रहरीद्वारा हत्या</span>
-                        </li>
-                        <li class="bg-gradient-to-r from-gray-50 to-gray-100 p-4 md:p-6 rounded-xl border-l-4 border-blue-500 shadow-sm hover:translate-x-2 transition-transform duration-200">
-                            <span class="text-blue-500 font-bold mr-2">●</span>
-                            <span class="text-base md:text-lg text-gray-800 leading-relaxed">ब्राउन निहत्था थिए र सडकमा हिंडिरहेका थिए</span>
-                        </li>
-                        <li class="bg-gradient-to-r from-gray-50 to-gray-100 p-4 md:p-6 rounded-xl border-l-4 border-blue-500 shadow-sm hover:translate-x-2 transition-transform duration-200">
-                            <span class="text-blue-500 font-bold mr-2">●</span>
-                            <span class="text-base md:text-lg text-gray-800 leading-relaxed">घटना प्रहरीद्वारा अत्यधिक बल प्रयोगको प्रतीक बन्यो</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="w-full lg:w-80 order-1 lg:order-2 flex flex-col items-center">
-                    <div class="text-5xl md:text-6xl mb-4 md:mb-6 opacity-80">⚖️</div>
-                    <div class="bg-gradient-to-r from-red-500 to-orange-500 text-white p-4 md:p-6 rounded-2xl text-center shadow-lg">
-                        <h3 class="text-2xl md:text-3xl font-bold mb-2">2014</h3>
-                        <p class="text-sm md:text-base">फर्गुसन घटना</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 3: Causes of the Incident -->
-        <div class="slide glass-effect rounded-3xl shadow-2xl p-8 md:p-16 max-w-4xl w-11/12 min-h-[600px] hidden animate-slide-in">
-            <h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold text-center mb-8 md:mb-12 text-gray-800">घटनाको कारण</h2>
-            <ul class="space-y-4 md:space-y-6">
-                <li class="bg-gradient-to-r from-gray-50 to-gray-100 p-4 md:p-6 rounded-xl border-l-4 border-blue-500 shadow-sm hover:translate-x-2 transition-transform duration-200">
-                    <span class="text-blue-500 font-bold mr-2">●</span>
-                    <span class="text-base md:text-lg text-gray-800 leading-relaxed">प्रहरी र समुदायबीच विश्वासको अभाव</span>
-                </li>
-                <li class="bg-gradient-to-r from-gray-50 to-gray-100 p-4 md:p-6 rounded-xl border-l-4 border-blue-500 shadow-sm hover:translate-x-2 transition-transform duration-200">
-                    <span class="text-blue-500 font-bold mr-2">●</span>
-                    <span class="text-base md:text-lg text-gray-800 leading-relaxed">जातीय विभेद र प्रणालीगत अन्याय</span>
-                </li>
-                <li class="bg-gradient-to-r from-gray-50 to-gray-100 p-4 md:p-6 rounded-xl border-l-4 border-blue-500 shadow-sm hover:translate-x-2 transition-transform duration-200">
-                    <span class="text-blue-500 font-bold mr-2">●</span>
-                    <span class="text-base md:text-lg text-gray-800 leading-relaxed">कमजोर संवाद र गलत सूचना</span>
-                </li>
-                <li class="bg-gradient-to-r from-gray-50 to-gray-100 p-4 md:p-6 rounded-xl border-l-4 border-blue-500 shadow-sm hover:translate-x-2 transition-transform duration-200">
-                    <span class="text-blue-500 font-bold mr-2">●</span>
-                    <span class="text-base md:text-lg text-gray-800 leading-relaxed">प्रहरीमा विविधताको कमी</span>
-                </li>
-            </ul>
-        </div>
-
-        <!-- Slide 4: Community-Police Issues -->
-        <div class="slide glass-effect rounded-3xl shadow-2xl p-8 md:p-16 max-w-4xl w-11/12 min-h-[600px] hidden animate-slide-in">
-            <h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold text-center mb-8 md:mb-12 text-gray-800">सम-बुद्धि मुद्दाहरू</h2>
-            <ul class="space-y-4 md:space-y-6">
-                <li class="bg-gradient-to-r from-gray-50 to-gray-100 p-4 md:p-6 rounded-xl border-l-4 border-blue-500 shadow-sm hover:translate-x-2 transition-transform duration-200">
-                    <span class="text-blue-500 font-bold mr-2">●</span>
-                    <span class="text-base md:text-lg text-gray-800 leading-relaxed">कालो समुदायप्रति असमान व्यवहार</span>
-                </li>
-                <li class="bg-gradient-to-r from-gray-50 to-gray-100 p-4 md:p-6 rounded-xl border-l-4 border-blue-500 shadow-sm hover:translate-x-2 transition-transform duration-200">
-                    <span class="text-blue-500 font-bold mr-2">●</span>
-                    <span class="text-base md:text-lg text-gray-800 leading-relaxed">फाइन र जरिवानाको दुरुपयोग</span>
-                </li>
-                <li class="bg-gradient-to-r from-gray-50 to-gray-100 p-4 md:p-6 rounded-xl border-l-4 border-blue-500 shadow-sm hover:translate-x-2 transition-transform duration-200">
-                    <span class="text-blue-500 font-bold mr-2">●</span>
-                    <span class="text-base md:text-lg text-gray-800 leading-relaxed">विरोधको दमन</span>
-                </li>
-                <li class="bg-gradient-to-r from-gray-50 to-gray-100 p-4 md:p-6 rounded-xl border-l-4 border-blue-500 shadow-sm hover:translate-x-2 transition-transform duration-200">
-                    <span class="text-blue-500 font-bold mr-2">●</span>
-                    <span class="text-base md:text-lg text-gray-800 leading-relaxed">प्रहरी सुधारको मागा</span>
-                </li>
-            </ul>
-        </div>
-
-        <!-- Slide 5: National Issue -->
-        <div class="slide glass-effect rounded-3xl shadow-2xl p-8 md:p-16 max-w-4xl w-11/12 min-h-[600px] hidden animate-slide-in">
-            <h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold text-center mb-8 md:mb-12 text-gray-800">राष्ट्रिय मुद्दा कसरी बन्यो</h2>
-            <ul class="space-y-4 md:space-y-6">
-                <li class="bg-gradient-to-r from-gray-50 to-gray-100 p-4 md:p-6 rounded-xl border-l-4 border-blue-500 shadow-sm hover:translate-x-2 transition-transform duration-200">
-                    <span class="text-blue-500 font-bold mr-2">●</span>
-                    <span class="text-base md:text-lg text-gray-800 leading-relaxed">सामाजिक सञ्जालबाट विरोध फैलियो</span>
-                </li>
-                <li class="bg-gradient-to-r from-gray-50 to-gray-100 p-4 md:p-6 rounded-xl border-l-4 border-blue-500 shadow-sm hover:translate-x-2 transition-transform duration-200">
-                    <span class="text-blue-500 font-bold mr-2">●</span>
-                    <span class="text-base md:text-lg text-gray-800 leading-relaxed">"Black Lives Matter" अभियान सुरु</span>
-                </li>
-                <li class="bg-gradient-to-r from-gray-50 to-gray-100 p-4 md:p-6 rounded-xl border-l-4 border-blue-500 shadow-sm hover:translate-x-2 transition-transform duration-200">
-                    <span class="text-blue-500 font-bold mr-2">●</span>
-                    <span class="text-base md:text-lg text-gray-800 leading-relaxed">मिडियाको व्यापक रिपोर्टिङ</span>
-                </li>
-                <li class="bg-gradient-to-r from-gray-50 to-gray-100 p-4 md:p-6 rounded-xl border-l-4 border-blue-500 shadow-sm hover:translate-x-2 transition-transform duration-200">
-                    <span class="text-blue-500 font-bold mr-2">●</span>
-                    <span class="text-base md:text-lg text-gray-800 leading-relaxed">सरकारी अनुसन्धानबाट दोष उजागर</span>
-                </li>
-            </ul>
-        </div>
-
-        <!-- Slide 6: Solutions -->
-        <div class="slide glass-effect rounded-3xl shadow-2xl p-8 md:p-16 max-w-4xl w-11/12 min-h-[600px] hidden animate-slide-in">
-            <h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold text-center mb-8 md:mb-12 text-gray-800">समाधानका उपायहरू</h2>
-            <ul class="space-y-4 md:space-y-6">
-                <li class="bg-gradient-to-r from-gray-50 to-gray-100 p-4 md:p-6 rounded-xl border-l-4 border-blue-500 shadow-sm hover:translate-x-2 transition-transform duration-200">
-                    <span class="text-blue-500 font-bold mr-2">●</span>
-                    <span class="text-base md:text-lg text-gray-800 leading-relaxed">प्रहरी-जनता संवादको सुधार</span>
-                </li>
-                <li class="bg-gradient-to-r from-gray-50 to-gray-100 p-4 md:p-6 rounded-xl border-l-4 border-blue-500 shadow-sm hover:translate-x-2 transition-transform duration-200">
-                    <span class="text-blue-500 font-bold mr-2">●</span>
-                    <span class="text-base md:text-lg text-gray-800 leading-relaxed">पारदर्शिता र जवाफदेहिताको अभ्यास</span>
-                </li>
-                <li class="bg-gradient-to-r from-gray-50 to-gray-100 p-4 md:p-6 rounded-xl border-l-4 border-blue-500 shadow-sm hover:translate-x-2 transition-transform duration-200">
-                    <span class="text-blue-500 font-bold mr-2">●</span>
-                    <span class="text-base md:text-lg text-gray-800 leading-relaxed">विविधता आधारित भर्ती प्रक्रिया</span>
-                </li>
-                <li class="bg-gradient-to-r from-gray-50 to-gray-100 p-4 md:p-6 rounded-xl border-l-4 border-blue-500 shadow-sm hover:translate-x-2 transition-transform duration-200">
-                    <span class="text-blue-500 font-bold mr-2">●</span>
-                    <span class="text-base md:text-lg text-gray-800 leading-relaxed">सामुदायिक प्रहरी अभ्यास</span>
-                </li>
-                <li class="bg-gradient-to-r from-gray-50 to-gray-100 p-4 md:p-6 rounded-xl border-l-4 border-blue-500 shadow-sm hover:translate-x-2 transition-transform duration-200">
-                    <span class="text-blue-500 font-bold mr-2">●</span>
-                    <span class="text-base md:text-lg text-gray-800 leading-relaxed">कानुनी सुधार</span>
-                </li>
-            </ul>
-        </div>
-
-        <!-- Slide 7: Leadership Issues -->
-        <div class="slide glass-effect rounded-3xl shadow-2xl p-8 md:p-16 max-w-4xl w-11/12 min-h-[600px] hidden animate-slide-in">
-            <h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold text-center mb-8 md:mb-12 text-gray-800">नेतृत्वसम्बन्धी मुद्दाहरू</h2>
-            <ul class="space-y-4 md:space-y-6">
-                <li class="bg-gradient-to-r from-gray-50 to-gray-100 p-4 md:p-6 rounded-xl border-l-4 border-blue-500 shadow-sm hover:translate-x-2 transition-transform duration-200">
-                    <span class="text-blue-500 font-bold mr-2">●</span>
-                    <span class="text-base md:text-lg text-gray-800 leading-relaxed">ढिलो प्रतिक्रिया</span>
-                </li>
-                <li class="bg-gradient-to-r from-gray-50 to-gray-100 p-4 md:p-6 rounded-xl border-l-4 border-blue-500 shadow-sm hover:translate-x-2 transition-transform duration-200">
-                    <span class="text-blue-500 font-bold mr-2">●</span>
-                    <span class="text-base md:text-lg text-gray-800 leading-relaxed">सहानुभूतिको कमी</span>
-                </li>
-                <li class="bg-gradient-to-r from-gray-50 to-gray-100 p-4 md:p-6 rounded-xl border-l-4 border-blue-500 shadow-sm hover:translate-x-2 transition-transform duration-200">
-                    <span class="text-blue-500 font-bold mr-2">●</span>
-                    <span class="text-base md:text-lg text-gray-800 leading-relaxed">संकटकालमा संवादको कमी</span>
-                </li>
-                <li class="bg-gradient-to-r from-gray-50 to-gray-100 p-4 md:p-6 rounded-xl border-l-4 border-blue-500 shadow-sm hover:translate-x-2 transition-transform duration-200">
-                    <span class="text-blue-500 font-bold mr-2">●</span>
-                    <span class="text-base md:text-lg text-gray-800 leading-relaxed">विश्वास निर्माणमा असफलता</span>
-                </li>
-            </ul>
-        </div>
-
-        <!-- Slide 8: Current Situation -->
-        <div class="slide glass-effect rounded-3xl shadow-2xl p-8 md:p-16 max-w-4xl w-11/12 min-h-[600px] hidden animate-slide-in">
-            <h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold text-center mb-8 md:mb-12 text-gray-800">वर्तमान अवस्था</h2>
-            <ul class="space-y-4 md:space-y-6">
-                <li class="bg-gradient-to-r from-gray-50 to-gray-100 p-4 md:p-6 rounded-xl border-l-4 border-blue-500 shadow-sm hover:translate-x-2 transition-transform duration-200">
-                    <span class="text-blue-500 font-bold mr-2">●</span>
-                    <span class="text-base md:text-lg text-gray-800 leading-relaxed">नेतृत्वमा विविधता</span>
-                </li>
-                <li class="bg-gradient-to-r from-gray-50 to-gray-100 p-4 md:p-6 rounded-xl border-l-4 border-blue-500 shadow-sm hover:translate-x-2 transition-transform duration-200">
-                    <span class="text-blue-500 font-bold mr-2">●</span>
-                    <span class="text-base md:text-lg text-gray-800 leading-relaxed">प्रहरी सुधारको कार्यान्वयन</span>
-                </li>
-                <li class="bg-gradient-to-r from-gray-50 to-gray-100 p-4 md:p-6 rounded-xl border-l-4 border-blue-500 shadow-sm hover:translate-x-2 transition-transform duration-200">
-                    <span class="text-blue-500 font-bold mr-2">●</span>
-                    <span class="text-base md:text-lg text-gray-800 leading-relaxed">"BLM" अभियान बलियो</span>
-                </li>
-                <li class="bg-gradient-to-r from-gray-50 to-gray-100 p-4 md:p-6 rounded-xl border-l-4 border-blue-500 shadow-sm hover:translate-x-2 transition-transform duration-200">
-                    <span class="text-blue-500 font-bold mr-2">●</span>
-                    <span class="text-base md:text-lg text-gray-800 leading-relaxed">सामाजिक न्यायको आवाज फैलिएको</span>
-                </li>
-            </ul>
-        </div>
-
-        <!-- Slide 9: Leadership Lessons -->
-        <div class="slide glass-effect rounded-3xl shadow-2xl p-8 md:p-16 max-w-4xl w-11/12 min-h-[600px] hidden animate-slide-in">
-            <h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold text-center mb-8 md:mb-12 text-gray-800">नेतृत्वका पाठहरू</h2>
-            <ul class="space-y-3 md:space-y-4">
-                <li class="bg-gradient-to-r from-gray-50 to-gray-100 p-3 md:p-4 rounded-xl border-l-4 border-blue-500 shadow-sm hover:translate-x-2 transition-transform duration-200">
-                    <span class="text-blue-500 font-bold mr-2">●</span>
-                    <span class="text-sm md:text-base text-gray-800 leading-relaxed">सुनुहोस्, खुला रहनुहोस्</span>
-                </li>
-                <li class="bg-gradient-to-r from-gray-50 to-gray-100 p-3 md:p-4 rounded-xl border-l-4 border-blue-500 shadow-sm hover:translate-x-2 transition-transform duration-200">
-                    <span class="text-blue-500 font-bold mr-2">●</span>
-                    <span class="text-sm md:text-base text-gray-800 leading-relaxed">समुदायसँग काम गर्नुहोस्</span>
-                </li>
-                <li class="bg-gradient-to-r from-gray-50 to-gray-100 p-3 md:p-4 rounded-xl border-l-4 border-blue-500 shadow-sm hover:translate-x-2 transition-transform duration-200">
-                    <span class="text-blue-500 font-bold mr-2">●</span>
-                    <span class="text-sm md:text-base text-gray-800 leading-relaxed">प्रतिनिधित्व सुनिश्चित गर्नुहोस्</span>
-                </li>
-                <li class="bg-gradient-to-r from-gray-50 to-gray-100 p-3 md:p-4 rounded-xl border-l-4 border-blue-500 shadow-sm hover:translate-x-2 transition-transform duration-200">
-                    <span class="text-blue-500 font-bold mr-2">●</span>
-                    <span class="text-sm md:text-base text-gray-800 leading-relaxed">कठिन समयमा संयमता देखाउनुहोस्</span>
-                </li>
-                <li class="bg-gradient-to-r from-gray-50 to-gray-100 p-3 md:p-4 rounded-xl border-l-4 border-blue-500 shadow-sm hover:translate-x-2 transition-transform duration-200">
-                    <span class="text-blue-500 font-bold mr-2">●</span>
-                    <span class="text-sm md:text-base text-gray-800 leading-relaxed">अन्यायपूर्ण प्रणाली सुधार गर्नुहोस्</span>
-                </li>
-                <li class="bg-gradient-to-r from-gray-50 to-gray-100 p-3 md:p-4 rounded-xl border-l-4 border-blue-500 shadow-sm hover:translate-x-2 transition-transform duration-200">
-                    <span class="text-blue-500 font-bold mr-2">●</span>
-                    <span class="text-sm md:text-base text-gray-800 leading-relaxed">स्थानीय आवाजको सम्मान गर्नुहोस्</span>
-                </li>
-                <li class="bg-gradient-to-r from-gray-50 to-gray-100 p-3 md:p-4 rounded-xl border-l-4 border-blue-500 shadow-sm hover:translate-x-2 transition-transform duration-200">
-                    <span class="text-blue-500 font-bold mr-2">●</span>
-                    <span class="text-sm md:text-base text-gray-800 leading-relaxed">सहानुभूतिपूर्वक बोल्नुहोस्</span>
-                </li>
-            </ul>
-        </div>
-
-        <!-- Slide 10: Conclusion -->
-        <div class="slide glass-effect rounded-3xl shadow-2xl p-8 md:p-16 max-w-4xl w-11/12 min-h-[600px] hidden animate-slide-in">
-            <h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold text-center mb-8 md:mb-12 text-gray-800">निष्कर्ष</h2>
-            <ul class="space-y-6 md:space-y-8">
-                <li class="bg-gradient-to-r from-gray-50 to-gray-100 p-6 md:p-8 rounded-xl border-l-4 border-blue-500 shadow-sm hover:translate-x-2 transition-transform duration-200">
-                    <span class="text-blue-500 font-bold mr-2">●</span>
-                    <span class="text-lg md:text-xl text-gray-800 leading-relaxed">फर्गुसनबाट सशक्त पाठहरू सिक्न सकिन्छ</span>
-                </li>
-            </ul>
-        </div>
+<body class="min-h-screen gradient-bg overflow-x-hidden">
+    <!-- Floating Balloons -->
+    <div class="fixed inset-0 pointer-events-none z-10">
+        <div class="balloon bg-red-400 absolute top-10 left-10 float shadow-lg" style="animation-delay: 0s;"></div>
+        <div class="balloon bg-blue-400 absolute top-20 right-20 float shadow-lg" style="animation-delay: 1s;"></div>
+        <div class="balloon bg-yellow-400 absolute top-32 left-1/4 float shadow-lg" style="animation-delay: 2s;"></div>
+        <div class="balloon bg-green-400 absolute top-16 right-1/3 float shadow-lg" style="animation-delay: 1.5s;"></div>
+        <div class="balloon bg-purple-400 absolute top-40 left-1/2 float shadow-lg" style="animation-delay: 0.5s;"></div>
     </div>
-
-    <!-- Navigation Controls -->
-    <div class="fixed bottom-4 left-1/2 transform -translate-x-1/2 flex gap-3 md:gap-4 z-50">
-        <button class="btn glass-effect px-4 py-3 md:px-6 md:py-3 rounded-full cursor-pointer font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed text-sm md:text-base" 
-                id="prevBtn" onclick="changeSlide(-1)">
-            ⬅ अघिल्लो
-        </button>
-        <button class="btn glass-effect px-4 py-3 md:px-6 md:py-3 rounded-full cursor-pointer font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed text-sm md:text-base" 
-                id="nextBtn" onclick="changeSlide(1)">
-            पछिल्लो ➡
-        </button>
+    
+    <!-- Sparkling Stars -->
+    <div class="fixed inset-0 pointer-events-none z-5">
+        <div class="absolute top-20 left-20 w-4 h-4 bg-white rounded-full sparkle" style="animation-delay: 0s;"></div>
+        <div class="absolute top-32 right-32 w-3 h-3 bg-yellow-300 rounded-full sparkle" style="animation-delay: 1s;"></div>
+        <div class="absolute top-60 left-1/3 w-2 h-2 bg-pink-300 rounded-full sparkle" style="animation-delay: 2s;"></div>
+        <div class="absolute top-80 right-1/4 w-4 h-4 bg-blue-200 rounded-full sparkle" style="animation-delay: 1.5s;"></div>
+        <div class="absolute top-96 left-3/4 w-3 h-3 bg-green-200 rounded-full sparkle" style="animation-delay: 0.5s;"></div>
     </div>
-
-    <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        const totalSlides = slides.length;
+    
+    <div class="relative z-20 min-h-screen flex flex-col items-center justify-center p-4 text-center">
+        <!-- Header Section -->
+        <div class="w-full flex flex-col items-center justify-center text-center mb-8 fade-in-up">
+            <h1 class="text-6xl md:text-8xl lg:text-9xl font-bold text-white mb-4 bounce mx-auto" style="text-shadow: 3px 3px 6px rgba(0,0,0,0.3);">
+                🎉 Happy Birthday 🎉
+            </h1>
+            <h2 class="text-4xl md:text-6xl lg:text-7xl font-bold text-yellow-300 mb-6 bounce mx-auto" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3); animation-delay: 0.5s;">
+                ROSU
+            </h2>
+        </div>
         
-        document.getElementById('total-slides').textContent = totalSlides;
-
-        function showSlide(n) {
-            slides[currentSlide].classList.remove('active');
-            slides[currentSlide].classList.add('hidden');
+        <!-- Cake Section -->
+        <div class="w-full flex justify-center mb-12 fade-in-up" style="animation-delay: 1s;">
+            <div class="relative">
+                <!-- Cake -->
+                <div class="bg-yellow-200 w-48 h-32 rounded-lg shadow-2xl relative overflow-hidden">
+                    <!-- Cake layers -->
+                    <div class="bg-pink-300 w-full h-8 absolute bottom-0 rounded-b-lg"></div>
+                    <div class="bg-yellow-300 w-full h-8 absolute bottom-8"></div>
+                    <div class="bg-pink-400 w-full h-8 absolute bottom-16"></div>
+                    <div class="bg-yellow-400 w-full h-8 absolute bottom-24"></div>
+                    
+                    <!-- Candles -->
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 flex space-x-4">
+                        <div class="flex flex-col items-center">
+                            <div class="candle-flame"></div>
+                            <div class="w-2 h-8 bg-pink-500 rounded-sm"></div>
+                        </div>
+                        <div class="flex flex-col items-center" style="animation-delay: 0.2s;">
+                            <div class="candle-flame"></div>
+                            <div class="w-2 h-8 bg-blue-500 rounded-sm"></div>
+                        </div>
+                        <div class="flex flex-col items-center" style="animation-delay: 0.4s;">
+                            <div class="candle-flame"></div>
+                            <div class="w-2 h-8 bg-green-500 rounded-sm"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Decorations -->
+                    <div class="absolute top-2 left-4 w-3 h-3 bg-red-400 rounded-full"></div>
+                    <div class="absolute top-6 right-6 w-2 h-2 bg-blue-400 rounded-full"></div>
+                    <div class="absolute top-12 left-8 w-4 h-4 bg-green-400 rounded-full"></div>
+                    <div class="absolute top-14 right-4 w-3 h-3 bg-purple-400 rounded-full"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Birthday Wishes -->
+        <div class="w-full flex justify-center text-center max-w-4xl mx-auto mb-8 fade-in-up" style="animation-delay: 1.5s;">
+            <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white border-opacity-30 w-full">
+                <h3 class="text-3xl font-bold text-white mb-6 flex items-center justify-center">
+                    <span class="heart text-red-400 mr-3">💖</span>
+                    Special Birthday Wishes
+                    <span class="heart text-red-400 ml-3">💖</span>
+                </h3>
+                <div class="space-y-4 text-lg md:text-xl text-white leading-relaxed text-center">
+                    <p class="italic">✨ On this magical day, may all your dreams come true ✨</p>
+                    <p class="italic">🌟 May your heart be filled with joy and your life with endless love 🌟</p>
+                    <p class="italic">🎈 Another year older, another year more beautiful and amazing 🎈</p>
+                    <p class="italic">💫 May this new chapter bring you countless reasons to smile 💫</p>
+                    <p class="italic">🌹 You deserve all the happiness the world has to offer 🌹</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Interactive Button -->
+        <div class="fade-in-up flex justify-center" style="animation-delay: 2s;">
+            <button id="celebrateBtn" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-4 px-8 rounded-full text-xl shadow-2xl transform hover:scale-110 transition-all duration-300 bounce">
+                🎊 Make a Wish! 🎊
+            </button>
+        </div>
+        
+        <!-- Hidden Celebration Message -->
+        <div id="celebrationMsg" class="hidden text-center mt-8 fade-in-up">
+            <div class="bg-gradient-to-r from-pink-400 to-purple-500 rounded-2xl p-6 shadow-2xl">
+                <h4 class="text-2xl font-bold text-white mb-4">🎉 Wishing you the most wonderful birthday, Rosu! 🎉</h4>
+                <p class="text-lg text-white">May this special day be filled with love, laughter, and all your heart desires! 💕</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="relative z-20 text-center pb-8">
+        <p class="text-white text-lg opacity-80">Made with 💖 for the amazing Rosu</p>
+    </div>
+    
+    <script>
+        // Interactive celebration
+        document.getElementById('celebrateBtn').addEventListener('click', function() {
+            const btn = this;
+            const msg = document.getElementById('celebrationMsg');
             
-            currentSlide = (n + totalSlides) % totalSlides;
-            
-            slides[currentSlide].classList.remove('hidden');
-            slides[currentSlide].classList.add('active');
-            
-            document.getElementById('current-slide').textContent = currentSlide + 1;
-            
-            // Update button states
-            document.getElementById('prevBtn').disabled = currentSlide === 0;
-            document.getElementById('nextBtn').disabled = currentSlide === totalSlides - 1;
-        }
-
-        function changeSlide(direction) {
-            if (direction === 1 && currentSlide < totalSlides - 1) {
-                showSlide(currentSlide + 1);
-            } else if (direction === -1 && currentSlide > 0) {
-                showSlide(currentSlide - 1);
+            // Add extra sparkle effect
+            for (let i = 0; i < 20; i++) {
+                createSparkle();
             }
+            
+            // Show celebration message
+            msg.classList.remove('hidden');
+            
+            // Change button text
+            btn.innerHTML = '🎉 Happy Birthday Rosu! 🎉';
+            btn.classList.add('bg-green-500');
+            btn.classList.remove('bg-pink-500');
+        });
+        
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'fixed w-2 h-2 bg-yellow-300 rounded-full pointer-events-none z-30';
+            sparkle.style.left = Math.random() * window.innerWidth + 'px';
+            sparkle.style.top = Math.random() * window.innerHeight + 'px';
+            sparkle.style.animation = 'sparkle 1s ease-out forwards';
+            
+            document.body.appendChild(sparkle);
+            
+            setTimeout(() => {
+                sparkle.remove();
+            }, 1000);
         }
-
-        // Keyboard navigation
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'ArrowRight' || e.key === ' ') {
-                e.preventDefault();
-                changeSlide(1);
-            } else if (e.key === 'ArrowLeft') {
-                e.preventDefault();
-                changeSlide(-1);
-            }
-        });
-
-        // Touch/swipe support
-        let startX = null;
-        let startY = null;
-
-        document.addEventListener('touchstart', function(e) {
-            startX = e.touches[0].clientX;
-            startY = e.touches[0].clientY;
-        });
-
-        document.addEventListener('touchend', function(e) {
-            if (!startX || !startY) return;
+        
+        // Add floating hearts periodically
+        setInterval(() => {
+            createFloatingHeart();
+        }, 3000);
+        
+        function createFloatingHeart() {
+            const heart = document.createElement('div');
+            heart.innerHTML = '💖';
+            heart.className = 'fixed text-2xl pointer-events-none z-15';
+            heart.style.left = Math.random() * (window.innerWidth - 50) + 'px';
+            heart.style.top = window.innerHeight + 'px';
+            heart.style.animation = 'float 4s linear forwards';
             
-            let endX = e.changedTouches[0].clientX;
-            let endY = e.changedTouches[0].clientY;
+            document.body.appendChild(heart);
             
-            let deltaX = startX - endX;
-            let deltaY = startY - endY;
-            
-            // Only trigger swipe if horizontal movement is greater than vertical
-            if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
-                if (deltaX > 0) {
-                    // Swiped left, go to next slide
-                    changeSlide(1);
-                } else {
-                    // Swiped right, go to previous slide
-                    changeSlide(-1);
+            setTimeout(() => {
+                heart.remove();
+            }, 4000);
+        }
+        
+        // Add CSS for floating hearts
+        const style = document.createElement('style');
+        style.textContent += `
+            @keyframes float {
+                from { 
+                    transform: translateY(0px) rotate(0deg);
+                    opacity: 1;
+                }
+                to { 
+                    transform: translateY(-${window.innerHeight + 100}px) rotate(360deg);
+                    opacity: 0;
                 }
             }
-            
-            startX = null;
-            startY = null;
-        });
-
-        // Initialize presentation
-        function initPresentation() {
-            // Hide all slides first
-            slides.forEach(slide => {
-                slide.classList.add('hidden');
-                slide.classList.remove('active');
-            });
-            
-            // Show first slide
-            if (slides.length > 0) {
-                slides[0].classList.remove('hidden');
-                slides[0].classList.add('active');
-            }
-            
-            showSlide(0);
-        }
-
-        // Run initialization when page loads
-        window.addEventListener('load', initPresentation);
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
-</html>-2 transition-transform duration-200">
-                    <span class="text-blue-500 font-bold mr-2">●</span>
-                    <span class="text-lg md:text-xl text-gray-800 leading-relaxed">नेतृत्व आदेश होइन, समझदारी हो</span>
-                </li>
-                <li class="bg-gradient-to-r from-gray-50 to-gray-100 p-6 md:p-8 rounded-xl border-l-4 border-blue-500 shadow-sm hover:translate-x-2 transition-transform duration-200">
-                    <span class="text-blue-500 font-bold mr-2">●</span>
-                    <span class="text-lg md:text-xl text-gray-800 leading-relaxed">इमानदारी र न्यायको अभ्यास आवश्यक</span>
-                </li>
-                <li class="bg-gradient-to-r from-gray-50 to-gray-100 p-6 md:p-8 rounded-xl border-l-4 border-blue-500 shadow-sm hover:translate-x
+</html>
